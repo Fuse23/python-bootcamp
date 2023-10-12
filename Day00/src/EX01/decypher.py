@@ -1,4 +1,5 @@
 import sys
+import argparse
 
 
 def decypher(message: str) -> str:
@@ -19,9 +20,9 @@ def test() -> None:
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Wrong number of args!")
-        exit(-1)
-    print(decypher(sys.argv[1]))
+    parser = argparse.ArgumentParser()
+    parser.add_argument("message", help="Decypher the string you use here", type=str)
+    args = parser.parse_args()
+    print(decypher(args.message))
 
-    test()
+    # test()

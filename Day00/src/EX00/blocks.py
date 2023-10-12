@@ -1,4 +1,5 @@
 import sys
+import argparse
 
 
 def test() -> None:
@@ -67,19 +68,16 @@ def check(input_hashes: list[str]) -> list[str]:
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Wrong number of args!")
-        exit(-1)
-    if not sys.argv[1].isnumeric():
-        print("Args must be a number!")
-        exit(-1)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("number_of_lines", help="Number of lines to be read", type=int)
+    args = parser.parse_args()
     hashes: list[str] = []
     try:
-        for _ in range(int(sys.argv[1])):
+        for _ in range(args.number_of_lines):
             hashes.append(sys.stdin.readline().strip())
         check(hashes)
     except EOFError:
-        print("EOFError: EOF when reading a line")
+        print("EOFError")
         exit(-1)
 
     # test()
