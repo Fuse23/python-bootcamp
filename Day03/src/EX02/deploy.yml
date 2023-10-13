@@ -1,0 +1,25 @@
+- name: Playbook
+  hosts: localhost
+  become: 'yes'
+  tasks:
+  - name: Installation packeges
+    ansible.builtin.apt:
+      name: '{{ item }}'
+    loop:
+    - python3
+    - nginx
+  - name: Copying files
+    ansible.builtin.copy:
+      src: '{{ item.src }}'
+      dest: '{{ item.dest }}'
+    loop:
+    - src: /home/fuse/Develop/School21/PythonBootcamp/Day03/src/EX02/../EX00/exploit.py
+      dest: /home/fuse/Develop/School21/PythonBootcamp/Day03/src/EX02/exploit.py
+    - src: /home/fuse/Develop/School21/PythonBootcamp/Day03/src/EX02/../EX01/consumer.py
+      dest: /home/fuse/Develop/School21/PythonBootcamp/Day03/src/EX02/consumer.py
+  - name: Run files
+    ansible.builtin.shell:
+      cmd: '{{ item.cmd }}'
+    loop:
+    - cmd: python3 exploit.py
+    - cmd: python3 consumer.py -e 4815162342,3133780085

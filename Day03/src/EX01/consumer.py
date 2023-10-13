@@ -1,5 +1,5 @@
 import redis
-from typing import List, Dict, Tuple
+from typing import List, Dict
 import argparse
 import json
 import logging
