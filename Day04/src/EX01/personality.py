@@ -1,8 +1,8 @@
 import random
-from typing import Dict, List
+from typing import Dict, List, Iterator
 
 
-def turrets_generator():
+def turrets_generator() -> Iterator:
     def generate_personality() -> Dict[str, int]:
         values: List[int] = []
         curr_sum: int = 0
@@ -18,18 +18,14 @@ def turrets_generator():
             'agreeableness': values[4],
         }
 
-
     def shoot() -> None:
         print('Shooting')
-
 
     def serach() -> None:
         print('Searching')
 
-
     def talk() -> None:
         print('Talking')
-
 
     while True:
         turret = type('Turret', (object, ), {
@@ -50,7 +46,6 @@ def tests() -> None:
             + turret.agreeableness
         )
 
-
     def print_turrtel_fields(turret) -> None:
         print(
             f'neuroticism: {turret.neuroticism}',
@@ -60,9 +55,8 @@ def tests() -> None:
             f'agreeableness: {turret.agreeableness}',
         )
 
-
     def test_1() -> None:
-        print('TEST 1\n')
+        print('\nTEST 1\n')
         turrets = turrets_generator()
         turret = next(turrets)
         for _ in range(3):
@@ -71,9 +65,8 @@ def tests() -> None:
             turret.search()
             turret.talk()
             print_turrtel_fields(turret)
-            print(f'Sum turret fields: {count_turret_fields(turret)}')
+            print(f'Sum turret fields: {count_turret_fields(turret)}\n')
             turret = next(turrets)
-
 
     test_1()
 

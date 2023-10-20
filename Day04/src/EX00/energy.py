@@ -1,20 +1,11 @@
-from typing import List, Any
+from typing import List, Any, Iterator
 from itertools import zip_longest, starmap
 
 
-def generate_str(*args) -> str:
-    x, y = args
-    if not y:
-        return 'weld '+x[0]+' to '+x[1]+' without plug'
-    return 'plug '+x[0]+' into '+x[1]+' using '+y
-
-
-def fix_wiring(cabels: List[str | Any],
-               sockets: List[str | Any],
-               plugs: List[str | Any]):
-    # return starmap(generate_str, filter(lambda x: not x[0] is None, zip_longest(zip(filter(lambda x: isinstance(x, str), cabels),filter(lambda x: isinstance(x, str), sockets),),filter(lambda x: isinstance(x, str), plugs))))
+def fix_wiring(cabels: List, sockets: List, plugs: List) -> Iterator[str]:
     return starmap(
-        generate_str,
+        lambda x, y: 'weld '+x[0]+' to '+x[1]+' without plug'
+        if not y else 'plug '+x[0]+' into '+x[1]+' using '+y,
         filter(
             lambda x: not x[0] is None,
             zip_longest(
@@ -58,9 +49,9 @@ def tests() -> None:
 
 
 if __name__ == '__main__':
-    plugs = ['plug1', 'plug2', 'plug3']
-    sockets = ['socket1', 'socket2', 'socket3', 'socket4']
-    cables = ['cable1', 'cable2', 'cable3', 'cable4']
+    plugs: List[str | Any] = ['plug1', 'plug2', 'plug3']
+    sockets: List[str | Any] = ['socket1', 'socket2', 'socket3', 'socket4']
+    cables: List[str | Any] = ['cable1', 'cable2', 'cable3', 'cable4']
     for c in fix_wiring(cables, sockets, plugs):
         print(c)
     print()
@@ -70,4 +61,3 @@ if __name__ == '__main__':
     for c in fix_wiring(cables, sockets, plugs):
         print(c)
     # tests()
-
