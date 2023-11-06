@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package Day06;
+
+service GalaxyService {
+    rpc get_ships(GalacticCoordinates) returns (stream Ship) {}
+}
+
+message GalacticCoordinates {
+    repeated float coords = 1;
+}
+
+message Ship {
+
+    enum AlignmentType {
+        Ally = 0;
+        Enemy = 1;
+    }
+
+    enum ShipType {
+        Corvette = 0;
+        Frigate = 1;
+        Cruiser = 2;
+        Destroyer = 3;
+        Carrier = 4;
+        Dreadnought = 5;
+    }
+
+    message Officer {
+        optional string first_name = 1;
+        optional string last_name = 2;
+        optional string rank = 3;
+    }
+
+    AlignmentType alignment = 1;
+    string name = 2;
+    float length = 3;
+    ShipType ship_class = 4;
+    int32 crew_size = 5;
+    bool armed = 6;
+    repeated Officer officers = 7;
+}
