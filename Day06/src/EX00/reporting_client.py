@@ -1,19 +1,9 @@
-import sys
-import os
-
-# Get the absolute path to the directory containing client.py
-current_dir = os.path.dirname(os.path.abspath(__file__))
-
-# Add the 'src' directory to the Python path
-src_dir = os.path.join(current_dir, '..')
-sys.path.append(src_dir)
-
 from proto import galaxy_pb2 as pb2
 from proto import galaxy_pb2_grpc as pb2_grpc
 
 import argparse
 import json
-from typing import Generator
+from typing import Iterable
 
 import grpc
 
@@ -24,7 +14,7 @@ def get_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def get_ships(channel: grpc.Channel, coords: list[float]) -> Generator:
+def get_ships(channel: grpc.Channel, coords: list[float]) -> Iterable[str]:
     stub: pb2_grpc.GalaxyServiceStub = pb2_grpc.GalaxyServiceStub(channel)
     ship: pb2.Ship
     for ship in stub.get_ships(pb2.GalacticCoordinates(coords=coords)):

@@ -1,18 +1,8 @@
-import sys
-import os
-
-# Get the absolute path to the directory containing client.py
-current_dir = os.path.dirname(os.path.abspath(__file__))
-
-# Add the 'src' directory to the Python path
-src_dir = os.path.join(current_dir, '..')
-sys.path.append(src_dir)
-
 from constants.constants import NAMES, FIRST_NAMES, LAST_NAMES, RANKS
 import proto.galaxy_pb2 as pb2
 import proto.galaxy_pb2_grpc as pb2_grpc
 
-from typing import Generator
+from typing import Iterable
 import random
 from concurrent import futures
 
@@ -22,13 +12,13 @@ import grpc
 class Galaxy(pb2_grpc.GalaxyService):
     def get_ships(self,
                   request: pb2.GalacticCoordinates,
-                  context: grpc.ServicerContext) -> Generator:
+                  context: grpc.ServicerContext) -> Iterable[pb2.Ship]:
         print(f'Coords: {request.coords}')
         for _ in range(random.randint(1, 10)):
             ship: pb2.Ship = pb2.Ship(
-                alignment=random.choice(0, 1),
+                alignment=random.randint(0, 1),
                 name=random.choice(NAMES),
-                length=random.uniform(80, 20_000),
+                length=random.uniform(80, 20000),
                 ship_class=random.randint(0, 5),
                 crew_size=random.randint(4, 500),
                 armed=random.choice([True, False]),
