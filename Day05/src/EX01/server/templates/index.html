@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Music service
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Upload music</h1>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file" id="input__file" class="input input__file">
+        <label for="input__file" class="input__file-button">
+            <span class="input__file-button-text">Select file</span>
+        </label>
+        <input type="submit" value="Send" class="input__submit">
+    </form>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <p class="message">{{ messages[-1] }}</p>
+        {% endif %}
+    {% endwith %}
+    <h1>Your music</h1>
+    {% for song in songs %}
+        <p>{{ song.name }}</p>
+        <audio controls>
+            {% for type, file in song.files %}
+                <source src="../static/music/{{ file }}" type="{{ type }}">
+            {% endfor %}
+        </audio>
+    {% else %}
+        <p>No music =(</p>
+    {% endfor %}
+</div>
+{% endblock %}

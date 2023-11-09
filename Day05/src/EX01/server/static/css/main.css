@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background-color: #1e1e11;
+    background-image: url('../img/3d-rendering-of-the-space.png');
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+h1 {
+    margin: 5%;
+}
+
+p {
+    margin: 1%;
+}
+
+.input__file {
+    opacity: 0;
+    /* visibility: hidden; */
+    position: absolute;
+}
+
+.input__file-button-text {
+    line-height: 1;
+    margin-top: 1px;
+}
+
+.input__file-button {
+    width: 100%;
+    max-width: 120px;
+    height: 40px;
+    background: #1e1e11;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border-radius: 16px;
+    cursor: pointer;
+    margin: 12px auto;
+}
+
+.input__submit {
+    width: 100%;
+    max-width: 80px;
+    border-radius: 16px;
+    border: none;
+}
+
+.message {
+    color: red;
+}
