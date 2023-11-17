@@ -1,0 +1,94 @@
+{
+    "questions": [
+      {
+        "question": "You find a wallet on the street. What do you do?",
+        "options": [
+          "Return it to the owner.",
+          "Keep it for yourself.",
+          "Leave it where you found it."
+        ],
+        "correct_answer": 1
+      },
+      {
+        "question": "You witness a colleague being treated unfairly at work. How do you react?",
+        "options": [
+          "Speak up and defend your colleague.",
+          "Ignore it and focus on your work.",
+          "Report it to a higher authority."
+        ],
+        "correct_answer": 1
+      },
+      {
+        "question": "You see a stray animal in need. What's your instinct?",
+        "options": [
+          "Try to help or find someone who can.",
+          "Keep walking and ignore it.",
+          "Feel sympathy but do nothing."
+        ],
+        "correct_answer": 1
+      },
+      {
+        "question": "A friend is going through a tough time. How do you offer support?",
+        "options": [
+          "Listen and provide emotional support.",
+          "Offer practical solutions to their problems.",
+          "Tell them to toughen up and move on."
+        ],
+        "correct_answer": 1
+      },
+      {
+        "question": "You come across a beautiful but endangered plant. What's your first thought?",
+        "options": [
+          "Work to protect and preserve it.",
+          "Appreciate its beauty and move on.",
+          "Consider harvesting it for personal use."
+        ],
+        "correct_answer": 1
+      },
+      {
+        "question": "How do you handle stress and pressure in your daily life?",
+        "options": [
+          "Practice relaxation techniques or seek support.",
+          "Keep it to yourself and deal with it internally.",
+          "Take it out on others or lash out."
+        ],
+        "correct_answer": 1
+      },
+      {
+        "question": "You're faced with a moral dilemma. What guides your decision-making?",
+        "options": [
+          "Consider the greater good and ethical principles.",
+          "Prioritize personal gain and interests.",
+          "Make decisions impulsively based on emotion."
+        ],
+        "correct_answer": 1
+      },
+      {
+        "question": "What role does empathy play in your interactions with others?",
+        "options": [
+          "I actively try to understand and share others' feelings.",
+          "I focus on my own concerns and emotions.",
+          "I find it challenging to connect with others emotionally."
+        ],
+        "correct_answer": 1
+      },
+      {
+        "question": "You discover someone close to you has been dishonest. How do you react?",
+        "options": [
+          "Address the issue directly and seek resolution.",
+          "Accept it and move on without confrontation.",
+          "React with anger and sever ties."
+        ],
+        "correct_answer": 1
+      },
+      {
+        "question": "How do you approach the unknown or uncertain situations?",
+        "options": [
+          "Stay calm and assess the situation before taking action.",
+          "Feel anxious and seek guidance from others.",
+          "Act impulsively to resolve the uncertainty."
+        ],
+        "correct_answer": 1
+      }
+    ]
+}

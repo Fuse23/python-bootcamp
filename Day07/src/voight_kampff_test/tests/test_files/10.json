@@ -1,0 +1,31 @@
+{
+    "questions": [
+      {
+        "question": "You find a wallet on the street. What do you do?",
+        "options": [
+          "Return it to the owner.",
+          "Keep it for yourself.",
+          "Leave it where you found it."
+        ],
+        "correct_answer": 0
+      },
+      {
+        "question": "You witness a colleague being treated unfairly at work. How do you react?",
+        "options": [
+          "Speak up and defend your colleague.",
+          "Ignore it and focus on your work.",
+          "Report it to a higher authority."
+        ],
+        "correct_answer": 0
+      },
+      {
+        "question": "You see a stray animal in need. What's your instinct?",
+        "options": [
+          "Try to help or find someone who can.",
+          "Keep walking and ignore it.",
+          "Feel sympathy but do nothing."
+        ],
+        "correct_answer": 0
+      }
+    ]
+}

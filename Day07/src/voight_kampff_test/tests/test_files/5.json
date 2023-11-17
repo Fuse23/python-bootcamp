@@ -1,0 +1,12 @@
+{
+    "questions": [
+      {
+        "question": "You find a wallet on the street. What do you do?",
+        "options": [
+          "Return it to the owner.",
+          "Keep it for yourself.",
+          "Leave it where you found it."
+        ]
+      }
+    ]
+}
